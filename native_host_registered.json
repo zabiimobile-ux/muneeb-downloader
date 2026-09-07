@@ -1,0 +1,9 @@
+{
+  "name": "com.muneeb.linkgrabber",
+  "description": "Muneeb Link Grabber Native Host",
+  "path": "D:\\extension\\native_host.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://hiognlmnbdoiicbdigfonpfpoicoijaj/"
+  ]
+}

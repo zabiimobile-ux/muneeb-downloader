@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Muneeb Link Grabber - YouTube In-Page Floating Bar & Video Card Buttons
+   Aesthetic: Modern 3D Glassmorphism + Claymorphism + Violet/Mint Accents
+   ========================================================================== */
+
+/* 1. Main Watch Page Action Bar (Under video player) */
+#muneeb-yt-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 0 16px 0;
+  padding: 9px 16px;
+  background: linear-gradient(135deg, rgba(28, 31, 60, 0.94) 0%, rgba(15, 17, 36, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  box-shadow: 
+    0 12px 34px -4px rgba(0, 0, 0, 0.6),
+    0 0 24px rgba(168, 85, 247, 0.22),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  flex-wrap: wrap;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#muneeb-yt-action-bar .muneeb-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+#muneeb-yt-action-bar .muneeb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 4px 11px;
+  border-radius: 9999px;
+  letter-spacing: 0.2px;
+  box-shadow: 0 3px 10px rgba(236, 72, 153, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+#muneeb-yt-action-bar .muneeb-badge svg {
+  color: #ffffff;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+#muneeb-yt-action-bar .muneeb-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#muneeb-yt-action-bar .muneeb-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  overflow: hidden;
+}
+
+#muneeb-yt-action-bar .muneeb-btn-copy {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#muneeb-yt-action-bar .muneeb-btn-copy:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+#muneeb-yt-action-bar .muneeb-btn-download {
+  background: linear-gradient(135deg, #00f2fe 0%, #10b981 50%, #059669 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 
+    0 6px 18px rgba(16, 185, 129, 0.5),
+    0 2px 4px rgba(0, 242, 254, 0.3),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.65),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.28);
+}
+
+#muneeb-yt-action-bar .muneeb-btn-download::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 10px 10px 0 0;
+  pointer-events: none;
+}
+
+#muneeb-yt-action-bar .muneeb-btn-download:hover {
+  background: linear-gradient(135deg, #38ef7d 0%, #34d399 50%, #11998e 100%);
+  transform: translateY(-1.5px);
+  box-shadow: 
+    0 8px 24px rgba(16, 185, 129, 0.65),
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.75);
+}
+
+#muneeb-yt-action-bar .muneeb-btn:active {
+  transform: translateY(1.5px) scale(0.98);
+}
+
+#muneeb-yt-action-bar .muneeb-btn.success {
+  background: linear-gradient(135deg, #00f2fe 0%, #10b981 100%) !important;
+  color: #ffffff !important;
+}
+
+#muneeb-yt-action-bar .muneeb-btn.loading {
+  opacity: 0.85;
+  cursor: wait;
+}
+
+/* 2. Video Card Buttons (Home, Search, Channel, Sidebar Feeds) */
+.muneeb-card-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  margin: 6px 0 4px 0 !important;
+  padding: 0 !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+.muneeb-card-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4.5px !important;
+  padding: 4px 9px !important;
+  border-radius: 7px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif !important;
+  cursor: pointer !important;
+  outline: none !important;
+  line-height: 1.3 !important;
+  text-decoration: none !important;
+  transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  user-select: none !important;
+}
+
+.muneeb-card-copy {
+  background: rgba(30, 33, 56, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+.muneeb-card-copy:hover {
+  background: rgba(42, 47, 78, 0.95) !important;
+  border-color: rgba(139, 92, 246, 0.4) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
+}
+
+.muneeb-card-download {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.38), inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+}
+
+.muneeb-card-download:hover {
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 50%, #10b981 100%) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 5px 14px rgba(16, 185, 129, 0.55), inset 0 1px 1.5px rgba(255, 255, 255, 0.55) !important;
+}
+
+.muneeb-card-btn:active {
+  transform: translateY(1px) scale(0.96) !important;
+}
+
+.muneeb-card-btn.success {
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.muneeb-card-btn.loading {
+  opacity: 0.8 !important;
+  cursor: wait !important;
+}
+

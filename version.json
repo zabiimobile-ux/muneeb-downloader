@@ -1,0 +1,8 @@
+{
+  "version": "1.3.0",
+  "name": "Muneeb Link Grabber",
+  "min_version": "1.0.0",
+  "changelog": "Single video download fixed, modern 3D UI, and GitHub auto-update system added.",
+  "zip_url": "https://raw.githubusercontent.com/zabiimobile-ux/muneeb-downloader/main/extension.zip",
+  "download_url": "https://github.com/zabiimobile-ux/muneeb-downloader/releases/latest"
+}

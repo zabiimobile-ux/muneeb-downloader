@@ -1,0 +1,1546 @@
+/* ==========================================================================
+   Muneeb Link Grabber - Ultra-Vibrant 3D Glassmorphic & Claymorphic UI System
+   Palette: Cosmic Violet-Pink Nebula + Electric Cyan & Hyper-Mint SaaS Glow
+   ========================================================================== */
+
+:root {
+  /* Canvas & Glass Base */
+  --bg-app: #090a16;
+  --bg-glass-card: rgba(23, 25, 48, 0.78);
+  --bg-glass-card-hover: rgba(32, 35, 68, 0.88);
+  --bg-glass-card-active: rgba(40, 44, 82, 0.95);
+  --bg-glass-inner: rgba(12, 13, 28, 0.82);
+  --bg-glass-header: rgba(15, 17, 36, 0.92);
+  --bg-glass-footer: rgba(13, 15, 30, 0.94);
+
+  /* Borders & Specular Crystal Glass Highlights */
+  --border-glass: rgba(255, 255, 255, 0.14);
+  --border-glass-hover: rgba(255, 255, 255, 0.28);
+  --border-glass-glow: rgba(168, 85, 247, 0.6);
+  --border-glass-cyan: rgba(34, 211, 238, 0.55);
+  --border-glass-mint: rgba(52, 211, 153, 0.55);
+  --border-focus: #a855f7;
+
+  /* Typography Colors */
+  --text-main: #ffffff;
+  --text-body: #f1f5f9;
+  --text-muted: #a5b4fc;
+  --text-dim: #717bb0;
+
+  /* Cosmic Purple, Violet & Magenta Palette */
+  --violet-glow: rgba(168, 85, 247, 0.45);
+  --violet-light: #d8b4fe;
+  --violet-primary: #a855f7;
+  --violet-deep: #7e22ce;
+  --violet-gradient: linear-gradient(135deg, #c084fc 0%, #a855f7 40%, #ec4899 100%);
+  --violet-gradient-hover: linear-gradient(135deg, #e879f9 0%, #c084fc 40%, #f43f5e 100%);
+  --magenta-glow: rgba(236, 72, 153, 0.45);
+
+  /* Electric Cyan & Sky Palette */
+  --cyan-accent: #22d3ee;
+  --cyan-light: #67e8f9;
+  --cyan-glow: rgba(34, 211, 238, 0.45);
+  --cyan-gradient: linear-gradient(135deg, #38bdf8 0%, #00f2fe 50%, #06b6d4 100%);
+  
+  /* Hyper-Mint & Emerald Palette */
+  --mint-accent: #34d399;
+  --mint-light: #6ee7b7;
+  --mint-primary: #10b981;
+  --mint-deep: #059669;
+  --mint-glow: rgba(16, 185, 129, 0.45);
+  --mint-gradient: linear-gradient(135deg, #00f2fe 0%, #10b981 50%, #059669 100%);
+  --mint-gradient-hover: linear-gradient(135deg, #38ef7d 0%, #34d399 50%, #11998e 100%);
+
+  /* Danger / Warning (Ruby Rose) */
+  --danger-color: #f43f5e;
+  --danger-gradient: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  --danger-bg: rgba(244, 63, 94, 0.16);
+  --danger-border: rgba(244, 63, 94, 0.38);
+  --danger-glow: rgba(244, 63, 94, 0.45);
+
+  /* Claymorphic 3D Bevels & Layered Glowing Shadows */
+  --clay-card-shadow: 
+    0 10px 28px -4px rgba(0, 0, 0, 0.6),
+    0 2px 10px rgba(168, 85, 247, 0.12),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1.5px 2.5px 0 rgba(0, 0, 0, 0.45);
+
+  --clay-card-hover-shadow: 
+    0 14px 36px -4px rgba(0, 0, 0, 0.7),
+    0 4px 18px rgba(168, 85, 247, 0.28),
+    0 0 12px rgba(34, 211, 238, 0.18),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1.5px 2.5px 0 rgba(0, 0, 0, 0.4);
+
+  --clay-btn-violet: 
+    0 6px 20px rgba(168, 85, 247, 0.5),
+    0 2px 6px rgba(236, 72, 153, 0.35),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+
+  --clay-btn-mint: 
+    0 6px 20px rgba(16, 185, 129, 0.48),
+    0 2px 6px rgba(0, 242, 254, 0.35),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.65),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+
+  --clay-btn-neutral: 
+    0 3px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.35);
+
+  --neumorph-inset: 
+    inset 0 2px 6px rgba(0, 0, 0, 0.55),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.08);
+
+  /* Smooth Radii */
+  --radius-xs: 6px;
+  --radius-sm: 9px;
+  --radius-md: 13px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+}
+
+/* ==========================================================================
+   Global Reset & Base
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 360px;
+  height: 580px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12.5px;
+  line-height: 1.45;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   App Container & Multi-Layer Cosmic Nebula Glow Background
+   ========================================================================== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, #171638 0%, #090a16 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cosmic Nebula Glow Orb 1 - Top Left Violet/Magenta */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  left: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.32) 0%, rgba(236, 72, 153, 0.18) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(30px);
+}
+
+/* Cosmic Nebula Glow Orb 2 - Bottom Right Cyan/Mint */
+.app-container::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.25) 0%, rgba(16, 185, 129, 0.16) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(34px);
+}
+
+/* ==========================================================================
+   App Header (Glassmorphic Top Bar with Prismatic Highlight)
+   ========================================================================== */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  background: var(--bg-glass-header);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-glass);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 3D Holographic Cosmic Logo Icon */
+.logo-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #ff007f 0%, #7928ca 50%, #0070f3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 
+    0 4px 14px rgba(121, 40, 202, 0.6),
+    0 0 10px rgba(255, 0, 127, 0.4),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.65),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  pointer-events: none;
+}
+
+.brand-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-text h1 {
+  font-size: 13.5px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 60%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Futuristic SaaS Version Tag with Cyan/Mint Glow */
+.version-tag {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: #00f2fe;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(16, 185, 129, 0.15) 100%);
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  padding: 2px 6.5px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Header Action Buttons (Frosted 3D Glass) */
+.btn-icon-header {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--clay-btn-neutral);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.btn-icon-header:hover {
+  background: var(--bg-glass-card-hover);
+  color: #ffffff;
+  border-color: var(--border-glass-glow);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.btn-icon-header:active {
+  transform: translateY(1px) scale(0.95);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-ghost-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+  color: #fda4af;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-ghost-danger:hover {
+  background: rgba(244, 63, 94, 0.3);
+  color: #ffffff;
+  border-color: rgba(244, 63, 94, 0.6);
+  box-shadow: 0 4px 14px var(--danger-glow), inset 0 1px 1.5px rgba(255, 255, 255, 0.35);
+  transform: translateY(-1.5px);
+}
+
+.btn-ghost-danger:active {
+  transform: translateY(1px) scale(0.95);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   3D Claymorphic Glowing Update Banner (GitHub Auto-Update)
+   ========================================================================== */
+.update-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 14px 0;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.22) 0%, rgba(168, 85, 247, 0.25) 50%, rgba(236, 72, 153, 0.22) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-md);
+  box-shadow: 
+    0 8px 24px -4px rgba(0, 0, 0, 0.5),
+    0 0 16px rgba(34, 211, 238, 0.35),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -1.5px 2.5px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: bannerGlowPulse 2.5s infinite alternate;
+  z-index: 6;
+  position: relative;
+}
+
+@keyframes bannerGlowPulse {
+  0% {
+    border-color: rgba(34, 211, 238, 0.45);
+    box-shadow: 0 4px 20px rgba(34, 211, 238, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.45);
+  }
+  100% {
+    border-color: rgba(236, 72, 153, 0.65);
+    box-shadow: 0 4px 24px rgba(236, 72, 153, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.update-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.update-sparkle {
+  font-size: 16px;
+  animation: rocketBounce 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes rocketBounce {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-2.5px) scale(1.15); }
+}
+
+.update-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.update-title {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.1px;
+}
+
+.update-version {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #67e8f9;
+}
+
+.btn-update-now {
+  padding: 5px 12px;
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 
+    0 4px 14px rgba(0, 242, 254, 0.4),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.7);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-update-now:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1.5px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(0, 242, 254, 0.6), inset 0 1.5px 2px rgba(255, 255, 255, 0.85);
+}
+
+.btn-update-now:active {
+  transform: translateY(1px) scale(0.96);
+}
+
+/* ==========================================================================
+   Action Buttons Section (Extra Pyara 3D Claymorphic Controls)
+   ========================================================================== */
+.action-section {
+  padding: 11px 14px 9px;
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.action-buttons-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Cosmic Violet-Pink 3D Claymorphic Action (Copy All Tabs) */
+.btn-primary-action {
+  flex: 1.18;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 12px;
+  background: var(--violet-gradient);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: var(--clay-btn-violet);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+/* Glossy highlight line across button top */
+.btn-primary-action::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  pointer-events: none;
+}
+
+.btn-primary-action:hover {
+  background: var(--violet-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 26px rgba(236, 72, 153, 0.55),
+    0 3px 8px rgba(168, 85, 247, 0.4),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.75),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary-action:active {
+  transform: translateY(1.5px) scale(0.97);
+  box-shadow: 
+    0 2px 6px rgba(168, 85, 247, 0.35),
+    inset 0 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+/* Electric Cyan-Mint 3D Claymorphic Download Action */
+.btn-download-action {
+  flex: 0.98;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  background: var(--mint-gradient);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: var(--clay-btn-mint);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.btn-download-action::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  pointer-events: none;
+}
+
+.btn-download-action:hover {
+  background: var(--mint-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 26px rgba(16, 185, 129, 0.6),
+    0 3px 8px rgba(0, 242, 254, 0.4),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-download-action:active {
+  transform: translateY(1.5px) scale(0.97);
+  box-shadow: 
+    0 2px 6px rgba(16, 185, 129, 0.35),
+    inset 0 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================================
+   Stats & Search Section (Glassmorphism & Soft Neumorphic Insets)
+   ========================================================================== */
+.stats-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px 10px;
+  gap: 9px;
+  border-bottom: 1px solid var(--border-glass);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.stats-counters {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* 3D Glass & Clay Counter Chips (Extra Vibrant Glow) */
+.counter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 10.5px;
+  font-weight: 700;
+  border: 1px solid var(--border-glass);
+  background: var(--bg-glass-card);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--clay-btn-neutral);
+  transition: all 0.2s ease;
+}
+
+.counter-chip.primary {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.25) 0%, rgba(236, 72, 153, 0.16) 100%);
+  border-color: rgba(192, 132, 252, 0.45);
+  color: #e879f9;
+  box-shadow: 0 2px 10px rgba(168, 85, 247, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.counter-chip.primary:hover {
+  border-color: rgba(236, 72, 153, 0.65);
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.35);
+  transform: translateY(-1px);
+}
+
+.counter-chip.primary .chip-val {
+  color: #ffffff;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  padding: 1px 6px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 6px rgba(236, 72, 153, 0.4);
+}
+
+.counter-chip.secondary {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(16, 185, 129, 0.15) 100%);
+  border-color: rgba(56, 189, 248, 0.45);
+  color: #38bdf8;
+  box-shadow: 0 2px 10px rgba(34, 211, 238, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.counter-chip.secondary:hover {
+  border-color: rgba(34, 211, 238, 0.65);
+  box-shadow: 0 4px 14px rgba(34, 211, 238, 0.35);
+  transform: translateY(-1px);
+}
+
+.counter-chip.secondary .chip-val {
+  color: #ffffff;
+  background: linear-gradient(135deg, #06b6d4, #10b981);
+  padding: 1px 6px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 6px rgba(6, 182, 212, 0.4);
+}
+
+.chip-val {
+  font-weight: 800;
+  font-size: 10px;
+}
+
+/* Soft Neumorphic Search Box */
+.search-box {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box svg {
+  position: absolute;
+  left: 10px;
+  color: var(--text-dim);
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 6px 26px 6px 30px;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--text-main);
+  background: var(--bg-glass-inner);
+  box-shadow: var(--neumorph-inset);
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.search-box input::placeholder {
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.search-box input:focus {
+  border-color: var(--violet-primary);
+  background: rgba(19, 21, 42, 0.96);
+  box-shadow: 
+    0 0 14px var(--violet-glow),
+    0 0 6px rgba(34, 211, 238, 0.3),
+    var(--neumorph-inset);
+}
+
+.search-box input:focus + svg,
+.search-box:focus-within svg {
+  color: #c084fc;
+}
+
+.btn-clear-search {
+  position: absolute;
+  right: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-muted);
+  font-size: 9px;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-clear-search:hover {
+  background: rgba(244, 63, 94, 0.35);
+  border-color: rgba(244, 63, 94, 0.6);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Groups Container (Scrollable Glass Deck)
+   ========================================================================== */
+.groups-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 14px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ultra-Sleek Glowing Gradient Scrollbar */
+.groups-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.groups-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.groups-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.4) 0%, rgba(34, 211, 238, 0.4) 100%);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.groups-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.7) 0%, rgba(34, 211, 238, 0.7) 100%);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.groups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   Floating 3D Glassmorphic Group Card
+   ========================================================================== */
+.group-card {
+  background: var(--bg-glass-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--clay-card-shadow);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.group-card:hover {
+  background: var(--bg-glass-card-hover);
+  border-color: var(--border-glass-hover);
+  box-shadow: var(--clay-card-hover-shadow);
+  transform: translateY(-1.5px);
+}
+
+/* Latest Group Floating Highlight with Violet & Cyan Aurora */
+.group-card.latest-card {
+  border-color: var(--border-glass-glow);
+  box-shadow: 
+    0 10px 28px -4px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(168, 85, 247, 0.3),
+    0 0 10px rgba(34, 211, 238, 0.2),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.group-card.latest-card:hover {
+  border-color: rgba(216, 180, 254, 0.75);
+  box-shadow: 
+    0 14px 36px -4px rgba(0, 0, 0, 0.7),
+    0 0 28px rgba(168, 85, 247, 0.42),
+    0 0 14px rgba(34, 211, 238, 0.3),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.45);
+}
+
+/* Group Header */
+.group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  user-select: none;
+}
+
+.group-card.expanded .group-header {
+  border-bottom: 1px solid var(--border-glass);
+  background: rgba(22, 25, 48, 0.75);
+}
+
+.group-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.group-title-area {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1;
+  min-width: 0;
+}
+
+.group-toggle-icon {
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.18s ease;
+  flex-shrink: 0;
+}
+
+.group-toggle-icon.expanded {
+  transform: rotate(90deg);
+  color: var(--cyan-accent);
+}
+
+.group-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2.5px;
+}
+
+.group-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.group-name {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.1px;
+}
+
+/* Soft Neumorphic Badge for Group Link Count */
+.group-count-badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #e2e8f0;
+  padding: 1px 6.5px;
+  border-radius: var(--radius-pill);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* Vibrant Latest Tag Pill (Cosmic Rose Gradient) */
+.latest-pill {
+  font-size: 8.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #f43f5e 0%, #ec4899 50%, #8b5cf6 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 1.5px 6px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.45);
+}
+
+.group-time-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.group-time {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+.group-dot {
+  font-size: 8px;
+  color: var(--text-dim);
+}
+
+.group-rel-time {
+  font-size: 10px;
+  color: #c084fc;
+  font-weight: 700;
+}
+
+/* Group Action Buttons (3D Claymorphic Micro-Controls) */
+.group-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.btn-group-action {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  box-shadow: var(--clay-btn-neutral);
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-group-action:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: var(--border-glass-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.btn-group-action:active {
+  transform: translateY(1px) scale(0.95);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+.btn-group-action.btn-download-group:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: var(--border-glass-mint);
+  color: var(--mint-accent);
+  box-shadow: 0 4px 14px var(--mint-glow), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.btn-group-action.btn-delete-group:hover {
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+  color: #fb7185;
+  box-shadow: 0 4px 14px var(--danger-glow), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   Group Items Tray (Neumorphic Inset Surface)
+   ========================================================================== */
+.group-items-tray {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  gap: 7px;
+  background: var(--bg-glass-inner);
+  box-shadow: var(--neumorph-inset);
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.group-items-tray.collapsed {
+  display: none;
+}
+
+/* Nested Link Item (3D Glass Floating Card) */
+.group-link-item {
+  background: rgba(27, 30, 56, 0.75);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  user-select: text;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group-link-item:hover {
+  background: rgba(38, 42, 75, 0.9);
+  border-color: rgba(168, 85, 247, 0.45);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(168, 85, 247, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* 3D Claymorphic Crystal Domain Avatar */
+.domain-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 3px 8px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.35);
+}
+
+.domain-avatar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  pointer-events: none;
+}
+
+.link-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+}
+
+.link-top-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.link-domain {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--cyan-accent);
+  text-shadow: 0 0 6px rgba(34, 211, 238, 0.3);
+}
+
+/* Futuristic Neon YouTube Tag */
+.yt-badge {
+  font-size: 8.5px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(255, 65, 108, 0.4);
+}
+
+.link-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link-url {
+  font-size: 9.5px;
+  color: #c084fc;
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.35;
+  word-break: break-all;
+  transition: all 0.16s ease;
+}
+
+.link-url:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+/* Link Item Actions (Micro 3D Controls) */
+.item-actions {
+  display: flex;
+  align-items: center;
+  gap: 3.5px;
+  flex-shrink: 0;
+}
+
+.btn-item-action {
+  width: 23px;
+  height: 23px;
+  border-radius: var(--radius-xs);
+  border: 1px solid transparent;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-item-action:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: var(--border-glass);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-0.5px);
+}
+
+.btn-item-action:active {
+  transform: translateY(0.5px) scale(0.95);
+}
+
+.btn-item-action.btn-download-single {
+  color: var(--mint-accent);
+}
+
+.btn-item-action.btn-download-single:hover {
+  background: rgba(16, 185, 129, 0.25);
+  color: #6ee7b7;
+  border-color: var(--border-glass-mint);
+  box-shadow: 0 3px 10px var(--mint-glow), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-item-action.btn-download-yt {
+  color: var(--mint-accent);
+}
+
+.btn-item-action.delete:hover {
+  background: var(--danger-bg);
+  color: #fb7185;
+  border-color: var(--danger-border);
+  box-shadow: 0 3px 10px var(--danger-glow);
+}
+
+/* ==========================================================================
+   Empty & Search Result States
+   ========================================================================== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 36px 16px 24px;
+  color: var(--text-muted);
+}
+
+/* 3D Floating Icon Orb with Prismatic Glow */
+.empty-icon {
+  margin-bottom: 14px;
+  color: #d8b4fe;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.28) 0%, rgba(34, 211, 238, 0.2) 100%);
+  border: 1px solid rgba(192, 132, 252, 0.45);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 10px 30px rgba(168, 85, 247, 0.35),
+    0 0 20px rgba(34, 211, 238, 0.25),
+    inset 0 2px 3px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+  animation: floatOrb 4s ease-in-out infinite;
+}
+
+@keyframes floatOrb {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+
+.empty-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+
+.empty-subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  max-width: 240px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.hint-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 240px;
+}
+
+/* Soft 3D Glass Pill Badges */
+.hint-pill {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-body);
+  background: var(--bg-glass-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  padding: 5.5px 10px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  box-shadow: var(--clay-btn-neutral);
+  transition: all 0.2s ease;
+}
+
+.hint-pill:hover {
+  background: var(--bg-glass-card-hover);
+  border-color: rgba(168, 85, 247, 0.45);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), 0 0 8px rgba(168, 85, 247, 0.2);
+}
+
+/* ==========================================================================
+   App Footer (Glassmorphic Status & Quick Actions)
+   ========================================================================== */
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: var(--bg-glass-footer);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-glass);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-status {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-status::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00f5a0;
+  box-shadow: 0 0 8px #00f5a0, 0 0 14px rgba(0, 245, 160, 0.6);
+  animation: pulseBeacon 2s infinite;
+}
+
+@keyframes pulseBeacon {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(0.85);
+  }
+}
+
+.btn-secondary-small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4.5px 10px;
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--clay-btn-neutral);
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary-small:hover {
+  background: var(--bg-glass-card-hover);
+  border-color: var(--border-glass-glow);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary-small:active {
+  transform: translateY(1px) scale(0.96);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================================
+   WhatsApp Contact Banner Footer (Luminous Mint Accent Glass)
+   ========================================================================== */
+.whatsapp-footer-bar {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(6, 182, 212, 0.14) 100%);
+  border-top: 1px solid rgba(52, 211, 153, 0.35);
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.whatsapp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #34d399;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  letter-spacing: 0.2px;
+}
+
+.whatsapp-badge:hover {
+  color: #6ee7b7;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  transform: scale(1.02);
+}
+
+.whatsapp-badge svg {
+  color: #10b981;
+  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.5));
+}
+
+.whatsapp-badge strong {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Confirmation Modal (3D Glassmorphic Popup)
+   ========================================================================== */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 7, 16, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 100;
+  animation: modalFadeIn 0.18s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-card {
+  background: linear-gradient(135deg, rgba(34, 38, 70, 0.96) 0%, rgba(20, 22, 46, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(168, 85, 247, 0.25),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -1.5px 2.5px rgba(0, 0, 0, 0.45);
+  transform: scale(1);
+  animation: modalCardPop 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalCardPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-icon-wrapper.danger {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+  color: #fb7185;
+  box-shadow: 0 4px 16px var(--danger-glow), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.modal-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+
+.modal-message {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  line-height: 1.45;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-modal-cancel {
+  flex: 1;
+  padding: 8.5px 10px;
+  background: var(--bg-glass-inner);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  box-shadow: var(--clay-btn-neutral);
+  transition: all 0.18s ease;
+}
+
+.btn-modal-cancel:hover {
+  background: var(--bg-glass-card-hover);
+  color: #ffffff;
+  border-color: var(--border-glass-hover);
+}
+
+.btn-modal-danger {
+  flex: 1;
+  padding: 8.5px 10px;
+  background: var(--danger-gradient);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--danger-glow), inset 0 1px 1.5px rgba(255, 255, 255, 0.55);
+  transition: all 0.18s ease;
+}
+
+.btn-modal-danger:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--danger-glow), inset 0 1.5px 2px rgba(255, 255, 255, 0.65);
+}
+
+.btn-modal-danger:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* ==========================================================================
+   Toast Notification (3D Floating Frosted Pill)
+   ========================================================================== */
+.toast-container {
+  position: absolute;
+  bottom: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 120;
+  pointer-events: none;
+  max-width: 90%;
+  animation: toastIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.toast-content {
+  background: linear-gradient(135deg, rgba(32, 36, 68, 0.96) 0%, rgba(18, 20, 42, 0.98) 100%);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(168, 85, 247, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  white-space: nowrap;
+}
+
+.toast-content.toast-error {
+  background: linear-gradient(135deg, rgba(75, 20, 32, 0.96) 0%, rgba(45, 12, 20, 0.98) 100%);
+  border-color: rgba(244, 63, 94, 0.55);
+  color: #ffe4e6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--danger-glow);
+}
+
+.toast-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#toastIconSuccess {
+  color: #34d399;
+  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.6));
+}
+
+#toastIconError {
+  color: #fb7185;
+  filter: drop-shadow(0 0 6px var(--danger-glow));
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+.hidden {
+  display: none !important;
+}
+
